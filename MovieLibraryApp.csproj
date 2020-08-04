@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F6099F7-C8B6-4836-A218-2FE14671BBB1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MovieLibraryApp</RootNamespace>
+    <AssemblyName>MovieLibraryApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LibVLCSharp, Version=3.4.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LibVLCSharp.3.4.6\lib\net471\LibVLCSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Actor.cs" />
+    <Compile Include="Model\Director.cs" />
+    <Compile Include="View\AddMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddMovie.Designer.cs">
+      <DependentUpon>AddMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Categorize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Categorize.Designer.cs">
+      <DependentUpon>Categorize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminControl.Designer.cs">
+      <DependentUpon>AdminControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Detail.Designer.cs">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Helpers.cs" />
+    <Compile Include="View\ListAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ListAll.Designer.cs">
+      <DependentUpon>ListAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Genre.cs" />
+    <Compile Include="Model\Movie.cs" />
+    <Compile Include="Model\Person.cs" />
+    <Compile Include="View\Navigation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Navigation.Designer.cs">
+      <DependentUpon>Navigation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Play.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Play.Designer.cs">
+      <DependentUpon>Play.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\AddMovie.resx">
+      <DependentUpon>AddMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Categorize.resx">
+      <DependentUpon>Categorize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminControl.resx">
+      <DependentUpon>AdminControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Detail.resx">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ListAll.resx">
+      <DependentUpon>ListAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Navigation.resx">
+      <DependentUpon>Navigation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Play.resx">
+      <DependentUpon>Play.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\VideoLAN.LibVLC.UWP.3.3.0\build\VideoLAN.LibVLC.UWP.targets" Condition="Exists('..\packages\VideoLAN.LibVLC.UWP.3.3.0\build\VideoLAN.LibVLC.UWP.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\VideoLAN.LibVLC.UWP.3.3.0\build\VideoLAN.LibVLC.UWP.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VideoLAN.LibVLC.UWP.3.3.0\build\VideoLAN.LibVLC.UWP.targets'))" />
+  </Target>
+</Project>
